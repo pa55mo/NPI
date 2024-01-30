@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is it time for Nathan to go home?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url('https://images.photowall.com/products/45025/beer.jpg?h=699&q=85');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: black;
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    input[type=number] {
+        width: 50px;
+        margin-top: 20px;
+    }
+    #result {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+   
+
+<img src="timelogo.jpeg" alt="logo" width="200" height="200">
+
+    <form id="timeToGoHomeForm">
+        <label for="pints">How many pints has he had?</label><br>
+        <input type="number" id="pints" name="pints" min="0" required><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="result"></div>
+
+    <script>
+    
+    
+        document.getElementById("timeToGoHomeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var pints = parseInt(document.getElementById("pints").value);
+            var result = document.getElementById("result");
+            
+            if (pints >= 1 && pints <= 4) {
+                result.textContent = "NO!";
+            } else if (pints > 4) {
+                result.textContent = "YES!";
+            } else {
+                result.textContent = "Please enter a valid number of pints.";
+            }
+        });
+    </script>
+
+<img src="nath.jpg" alt="nathan" width="300" height="300">
+
+<p> Created by Nerys Powles industries </p>
+
+</body>
+</html>

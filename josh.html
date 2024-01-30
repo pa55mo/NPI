@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Should Josh Have Next?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #000;
+        background-image: url('https://i.gifer.com/19V4.gif');
+        color: gold;
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    #answer {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>What should Josh have next?</h1>
+    <button onclick="generateAnswer()">Generate Answer</button>
+    <p id="answer"></p>
+
+    <script>
+        function generateAnswer() {
+            var answers = ["Pint of Stella", "A Key", "A Fag"];
+            var randomIndex = Math.floor(Math.random() * answers.length);
+            document.getElementById("answer").textContent = answers[randomIndex];
+        }
+    </script>
+</body>
+</html>
