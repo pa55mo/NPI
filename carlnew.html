@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashy Button</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        transition: background-image 0.5s ease;
+        background-image: url('data:image/jpeg;base64,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');
+        background-size: cover;
+    }
+    #flash {
+        font-size: 48px;
+        color: red;
+        animation: flash 0.5s infinite alternate; /* Flashing animation */
+        display: none;
+    }
+    @keyframes flash {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>
+</head>
+<body>
+    <h1>Is your name Carl Fredricks? Is someone doing your head in?</h1>
+    <button onclick="showYes()">Shall i push him down the stairs?</button>
+    <div id="flash">YES!</div>
+
+    <script>
+        function showYes() {
+            document.getElementById("flash").style.display = "block";
+            document.body.style.backgroundImage = "url('https://media1.tenor.com/m/dtjUemggpKwAAAAC/bloodline-blood.gif')";
+        }
+    </script>
+</body>
+</html>
