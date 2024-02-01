@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerys Powles Industries vs HElen Morris Innovations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nerys Powles Industries VS Helen Morris Innovations</h1>
+    </header>
+<p>We have been surveying in towns around the UK to see what the general public is more likely to use day to day, Please enter your answer and see the results below </p>
+    <main>
+        <form id="pollForm">
+            <input type="radio" name="answer" value="Option 1"> Option 1<br>
+            <input type="radio" name="answer" value="Option 2"> Option 2<br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="results" style="display: none;">
+            <p>Results:</p>
+            <ul>
+                <li>Option 1: <span id="option1Votes">768546</span> votes</li>
+                <li>Option 2: <span id="option2Votes">0</span> votes</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        let option1Votes = 768546;
+        let option2Votes = 0;
+
+        document.getElementById('pollForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let selectedOption = document.querySelector('input[name="answer"]:checked').value;
+            if (selectedOption === 'Option 1') {
+                option1Votes++;
+            } else if (selectedOption === 'Option 2') {
+                option2Votes++;
+            }
+            updateVoteCounts();
+        });
+
+        function updateVoteCounts() {
+            document.getElementById('option1Votes').textContent = option1Votes;
+            document.getElementById('option2Votes').textContent = option2Votes;
+            document.getElementById('pollForm').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
